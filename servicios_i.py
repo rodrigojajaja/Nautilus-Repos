@@ -1,3 +1,10 @@
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route('/')
+def home():
+    return '''
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,7 +32,7 @@
         header {
             width: 100%;
             height: 100vh;
-            background-image: url(contenedor2.jpg);
+            background-image: url(static/contenedor2.jpg);
             background-size: cover;
             background-position: center;
         }
@@ -195,7 +202,7 @@
 
 
     <div class="desc">
-        <h1> SERVICIOS. </h1>       
+        <h1> SERVICIOS </h1>       
     </div>
 
     <div class="divtexto">
@@ -205,7 +212,7 @@
 
 
     <div class="fotoportada">
-        <img src="serv1.png" alt="." width="1200">
+        <img src="static/serv1.png" alt="." width="1200">
     </div>
     <div class="space"></div>
 
@@ -217,11 +224,11 @@
 
  
     <div class="fotoportada">
-        <img src="serv2.png" alt="." width="1200">
+        <img src="static/serv2.png" alt="." width="1200">
     </div>
     <div class="div2"></div>
     <div class="fotoportada">
-        <img src="serv3.png" alt="." width="1200">
+        <img src="static/serv3.png" alt="." width="1200">
     </div>
     <div class="div2"></div>
 
@@ -243,3 +250,8 @@
     </script>
 </body>
 </html>
+    
+    '''
+
+if __name__ == '__main__':
+    app.run()

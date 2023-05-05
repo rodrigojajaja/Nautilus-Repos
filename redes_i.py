@@ -1,3 +1,10 @@
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route('/')
+def home():
+    return '''
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,7 +32,7 @@
         header {
             width: 100%;
             height: 100vh;
-            background-image: url(fondomitad.jpg);
+            background-image: url(static/fondomitad.jpg);
             background-size: cover;
             background-position: center;
         }
@@ -238,14 +245,14 @@
 
 
     <div class="desc">
-        <h1> CONTACTO. </h1>       
+        <h1> CONTACTO </h1>       
     </div>
 
 
     <div class="space"></div>
 
     <div class="divtexto">
-        <img src="cliente.png" alt="." width="590">
+        <img src="static/cliente.png" alt="." width="590">
         <h1>¡Bienvenido a nuestro portal! Estamos encantados de que desees ponerte en contacto con nosotros. Si tienes alguna pregunta, sugerencia, comentario o simplemente deseas saludarnos, este es el lugar adecuado.
             Para ponerte en contacto con nosotros, por favor lee la información y mándanos un mensaje
             Si tienes alguna pregunta específica sobre nuestros productos o servicios, no dudes en echar un vistazo a nuestras preguntas frecuentes. También puedes encontrar información adicional en nuestras redes sociales y blog.
@@ -257,13 +264,13 @@
     <div class="space"></div>
 
     <div class="divtexto2">
-        <img src="red1.png" alt="." width="290">
+        <img src="static/red1.png" alt="." width="290">
 
         <a href="https://www.facebook.com/profile.php?id=100092171114292&mibextid=LQQJ4d">Ir a la página de Facebook: Corporación Nautilus GT</a>
     </div>
 
     <div class="divtexto2">
-        <img src="red2.png" alt="." width="290">
+        <img src="static/red2.png" alt="." width="290">
         <a href="mailto:nautiluscorpgt@gmail.com">Enviar correo electrónico: nautiluscorpgt@gmail.com</a>
 
 
@@ -362,3 +369,9 @@
     </script>
 </body>
 </html>
+
+    
+    '''
+
+if __name__ == '__main__':
+    app.run()

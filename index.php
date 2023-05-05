@@ -20,15 +20,15 @@
 
 </form>
 
-<?php
-
+<?php 
+    
   if(isset($_POST['enviar'])){
       
       $nombre = $_POST['nombre'];
       $correo = $_POST['correo'];
       $telefono = $_POST['telefono'];
       
-      $insertar = "INSERT INTO datos Values ('$nombre','$correo','$telefono','')";
+      $insertar = "INSERT INTO dat Values ('$nombre','$correo','$telefono','')";
       
       $coneccion = mysqli_query($coneccion,$insertar);
   }

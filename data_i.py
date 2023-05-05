@@ -1,3 +1,10 @@
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route('/')
+def home():
+    return '''
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="estilos" href="styles.css"> 
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap" rel="stylesheet">
-    <title>Nautilus</title>
+    <title>Negocios</title>
     <link rel="icon" href="logo_nautilus.ico">
 </head>
 <body>
@@ -15,19 +22,19 @@
         /* estilos CSS para la pagina*/
         /*estilos para barra fija superior*/
         *{
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
         body{
-        font-family: 'PT Sans', sans-serif;
+            font-family: 'PT Sans', sans-serif;
         }
         header {
-        width: 100%;
-        height: 100vh;
-        background-image: url(fondo_nautilus.jpg);
-        background-size: cover;
-        background-position: center;
+            width: 100%;
+            height: 100vh;
+            background-image: url(static/fondofinal.jpg);
+            background-size: cover;
+            background-position: center;
         }
         .nav{
 
@@ -42,12 +49,12 @@
         }
         .nav.active{
 
-            background: #fff;
+            background: #3a96b5;
             padding: 15px;
         }
         .nav.active .logo,
         .nav.active a{
-            color: #000;
+            color: #fff;
         }
         .nav.active a:hover{
 
@@ -97,7 +104,8 @@
         }
         .fotoportada       
         {
-            height: 10vh;
+            background: size 10%;
+            height: 2vh;
             margin: 5%;
             display: flex;
             justify-content: center;
@@ -108,7 +116,10 @@
             height: 20px; 
         }
         .div2 {
-            height: 550px; 
+            height: 350px; 
+        } 
+        .space {
+            height: 230px; 
         }        
         .contenedorNot        
         {
@@ -147,6 +158,21 @@
             justify-content: center;
             align-items: center;
         }
+        .divtexto        
+        {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 15px;
+            background-color: none;
+			color:#2e677a;
+            height: 1vh;
+            margin: 5%;
+
+            justify-content: center;
+            align-items: center;
+        }
+        .divtexto h2{
+            font-style: normal;
+        }
     </style>
     <style>
         .texto {
@@ -155,16 +181,27 @@
             font-size: 20px;
             color: black;   
             margin: 15%;
-            display: flex;
+
             justify-content: center;
             align-items: center;
         }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap" rel="stylesheet">
+
+
+    <title>Comentarios</title>
+
+
+
+
+
+
+    <!--Aqui comienza el texto html-->
+
     <header>
         <nav class="nav">    
             <ul class="menu">
-                <div class="logo">CORPORACION NAUTILUS. </div>    
+                <div class="logo">CORPORACION NAUTILUS</div>    
                 <li><a href="#">Inicio</a></li>
                 <li><a href="#">Servicios</a></li>
                 <li><a href="#">Contacto</a></li>
@@ -172,52 +209,45 @@
             </ul>
         </nav>    
     </header>
+
+
     <div class="desc">
-        <h1> INICIO </h1>       
+        <h1> NEGOCIOS </h1>       
     </div>
-    <div></div>
-    <div class="fotoportada">
-        <img src="portada_nautilus.png" alt=".">
+
+    <div class="divtexto">
+        <h1>Candidatos a Distribuidores.</h1>
+        <h2>Y Recopilación de Datos</h2>
     </div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div class="fotoportada">
-        <img src="quehacemos.png" alt=".">
-    </div>
-    <div></div>
-    <br>
-    <br>
-    <div class="fotoportada">
-        <img src="quehacemos2.png" alt=".">
-    </div>
-    <div></div>
-    <br>
-    <br>
-    <div class="fotoportada">
-        <img src="quehacemos3.png" alt=".">
-    </div>
-    <div class="div2"></div>
-    <div class="contenedorNot">
-        <iframe src="https://www.infodolar.com.gt/" frameborder="0" width="100%" height="500px"></iframe>
-    </div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
+
+
+    <!--formulario comienza-->
+
+
+
+<form method="post">
+
+<input type="text" name="nombre" placeholder="nombre">
+<input type="text" name="correo" placeholder="correo">
+<input type="text" name="telefono" placeholder="telefono">
+    
+<input type= "submit" name="enviar">
+
+</form>
+
+
+
+    <!--aqui comienza el formulario-->
+
+
 
     
+    <!--aqui termina el formulario-->
+
+
+    <div class="space"></div>
+
+
     <div class="div3">
         <h1>Página creada por: Grupo Atlas. Guatemala C.A. 2023       </h1>
     </div>
@@ -234,3 +264,8 @@
     </script>
 </body>
 </html>
+    
+    '''
+
+if __name__ == '__main__':
+    app.run()
